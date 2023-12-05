@@ -1,2 +1,5 @@
 # ignore repo-update scripts
 *.sh
+
+# ingore temp files
+tmp.*

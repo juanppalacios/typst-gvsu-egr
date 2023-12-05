@@ -1,3 +1,5 @@
+// features added from typst's IEEE template
+
 #import "template.typ": thesis
 #show: doc => thesis(
   title: [
@@ -15,6 +17,7 @@
   ),
   acknowledgements: lorem(100),
   abstract: lorem(150),
+  bibliography-file: "references.bib",
   doc,
 )
 
@@ -49,3 +52,5 @@
 
 Example citation here @IEEEhowto:IEEEtranpage.
 Example citation there @IEEEexample:shellCTANpage.
+
+// = Appendix A

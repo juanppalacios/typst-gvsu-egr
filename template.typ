@@ -3,6 +3,7 @@
   authors: (),
   acknowledgements: [],
   abstract: [],
+  bibliography-file: none,
   doc,
 ) = {
 
@@ -12,6 +13,16 @@
     font: "Times New Roman",
     size: 12pt,
   )
+
+  // todo: fix typst's ieee imports
+
+  // Configure equation numbering and spacing.
+  set math.equation(numbering: "(1)")
+  show math.equation: set block(spacing: 0.65em)
+
+  // Configure lists.
+  set enum(indent: 10pt, body-indent: 9pt)
+  set list(indent: 10pt, body-indent: 9pt)
 
   set par(
     justify: true,
@@ -94,11 +105,12 @@
   set align(left)
   columns(1, doc)
 
+  // Display bibliography.
   pagebreak()
-  bibliography(
-    title: "References",
-    "references.bib"
-  )
+  if bibliography-file != none {
+    show bibliography: set text(12pt)
+    bibliography(bibliography-file, title: text(12pt)[References], style: "ieee")
+  }
 
   // todo: appendix
 }
